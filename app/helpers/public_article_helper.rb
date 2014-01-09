@@ -1,0 +1,2 @@
+module PublicArticleHelper
+end

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fatihdurmus.net</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "vendor/custom.modernizr"%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="top-bar" data-options="is_hover:false">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><%= link_to 'Fatihdurmus.net', root_path%></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li>
+        <% if is_admin?%>
+            <%= link_to 'Manage users', admin_users_path%>
+          <li><%= link_to 'Manage Articles', articles_path%></li>
+          <li><%= link_to 'Manage Videos', videos_path%></li>
+          <li><%= link_to 'Manage Pictures',pictures_path%></li>
+        <% end %>
+      </li>
+      <li class="divider"></li>
+      <li class="divider"></li>
+    </ul>
+
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="divider hide-for-small"></li>
+      <li class="has-dropdown"><a href="#">All Things</a>
+
+        <ul class="dropdown">
+          <li><label>Sub Menus</label></li>
+          <li class="has-dropdown"><a href="#" class="">Content</a>
+
+            <ul class="dropdown">
+              <li><%= link_to 'Technical Articles', public_article_index_path%></li>
+              <li><%= link_to 'Technical Videos', public_videos_path%></li>
+              <li><%= link_to 'Pictures',public_pictures_path%></li>
+            </ul>
+          </li>
+          <%if user_signed_in?%>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+          <% else %>
+          <li><%= link_to('Login', new_user_session_path)  %></li></li>
+          <li><%= link_to('Register', new_user_registration_path)%></li>
+
+        <% end %>
+          <li class="divider"></li>
+          <li class="divider"></li>
+        </ul>
+
+      </li>
+      <li class="divider"></li>
+      <li class="has-form">
+        <form>
+          <div class="row collapse">
+            <div class="small-8 columns">
+              <input type="text">
+            </div>
+            <div class="small-4 columns">
+              <a href="#" class="alert button">Not Now</a>
+            </div>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </section>
+</nav>
+<div class="row">
+  <div class="small-1 columns">
+    Latest Videos:
+    <% @video_last = latest_videos %>
+    <% for video in @video_last %>
+        <fieldset>
+        <%= video.title %><br>
+        <%= link_to 'show', public_video_path(video.id)%>
+        </fieldset>
+    <% end %>
+  </div>
+  <div class="large-10 columns">
+    <br>
+    <%= yield %>
+  </div>
+  <div class="small-1 columns">
+    Latest Articles:
+    <%@article = latest_articles%>
+    <% for article in @article %>
+        <%= article.title %>
+        <br>
+    <% end %>
+
+  </div>
+</div>
+
+
+</body>
+</html>

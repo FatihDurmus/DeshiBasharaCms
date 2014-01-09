@@ -1,0 +1,9 @@
+<% for picture in @pictures %>
+    <fieldset>
+    <%= picture.title%><br>
+    <%= image_tag picture.image, :width => "120", :height => "120"%></a><br>
+    <%= picture.description[0..30]%><br>
+    <%= link_to 'Show', public_picture_path(picture.id)%>
+    </fieldset>
+<% end %>
+

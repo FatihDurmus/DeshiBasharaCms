@@ -1,0 +1,32 @@
+<h1>Listing articles</h1>
+<idv class="large-10 large-centered-offset-1 columns">
+  <table id="articles" class="display" data-source="<%= articles_url(format: "json") %>">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.body %></td>
+        <td><%= article.user.email %></td>
+        <td><%= link_to 'Show', article %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</idv>
+<br>
+<div class="small-1 large-centered columns">
+  <%= link_to 'New Article', new_article_path, :class=>"button" %>
+</div>
