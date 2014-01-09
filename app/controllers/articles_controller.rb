@@ -30,16 +30,12 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id
-    respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @article }
+        redirect_to @article, notice: 'Article was successfully created.'
       else
-        format.html { render action: 'new' }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        render 'new'
       end
     end
-  end
 
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
