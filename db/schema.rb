@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140108170952) do
+ActiveRecord::Schema.define(version: 20140110171804) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 20140108170952) do
   end
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
+
+  create_table "contacts", force: true do |t|
+    t.string   "subject"
+    t.text     "body"
+    t.string   "phone_number"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pictures", force: true do |t|
     t.string   "title"

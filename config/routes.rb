@@ -1,4 +1,6 @@
 Fatihdurmusnet::Application.routes.draw do
+  resources :contacts
+
   resources :public_pictures
   resources :public_videos
   get "public_article/index"

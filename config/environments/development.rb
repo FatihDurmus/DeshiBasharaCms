@@ -26,4 +26,18 @@ Fatihdurmusnet::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: "smtp.gmail.com",
+      port: 587,
+      domain: "gmail.com",
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: "fatihdurmus15@gmail.com",
+      password: ""
+  }
+
+# Specify what domain to use for mailer URLs
+  config.action_mailer.default_url_options = {host: "127.0.0.1:3000"}
 end

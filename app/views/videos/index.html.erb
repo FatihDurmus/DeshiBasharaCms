@@ -1,5 +1,5 @@
 <h1>Listing videos</h1>
-
+<div class="">
 <table>
   <thead>
     <tr>
@@ -17,7 +17,6 @@
       <tr>
         <td><%= video.title %></td>
         <td><%= video.description[0..30] %></td>
-        <td><%= video.file %></td>
         <td><%= link_to 'Show', video %></td>
         <td><%= link_to 'Edit', edit_video_path(video) %></td>
         <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,5 +26,5 @@
 </table>
 
 <br>
-
+</div>
 <%= link_to 'New Video', new_video_path %>
