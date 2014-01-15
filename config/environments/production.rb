@@ -86,7 +86,7 @@ Fatihdurmusnet::Application.configure do
       authentication: "plain",
       enable_starttls_auto: true,
       user_name: "fatihdurmus15@gmail.com",
-      password: "138303"
+      password: ""
   }
 
 # Specify what domain to use for mailer URLs
