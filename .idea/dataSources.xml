@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2187770561">
+    <data-source source="LOCAL" name="Rails fatihdurmusnet: development" uuid="97f53fee-abac-4e8d-ae5f-aeb34f9d585a">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:fatihdurmusnet_development</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfc7dfd3dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails fatihdurmusnet: test" uuid="61f9f209-7e04-4f91-8692-3cbf6f82b95d">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:fatihdurmusnet_test</jdbc-url>
+      <user-name>root</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails fatihdurmusnet: production" uuid="382e5b40-3470-4019-b856-7076cedcf94a">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:fatihdurmusnet_production</jdbc-url>
+      <user-name>root</user-name>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
